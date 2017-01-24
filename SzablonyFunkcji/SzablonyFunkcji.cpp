@@ -1,4 +1,4 @@
-// SzablonyFunkcji.cpp : Defines the entry point for the console application.
+// SzablonyFunkcji.cpp : Defines the entry point for the console application. TEST
 //
 
 #include "stdafx.h"
