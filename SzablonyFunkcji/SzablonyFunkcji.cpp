@@ -42,33 +42,13 @@ T wez_min_max(T tab[], int ilosc, bool czy_rosnaco)
 			tab[min] = tab[i];
 			tab[i] = temp;
 		}
-		wynik = tab[0];
+		wynik = tab[ilosc - 1];
 	}
 	for (int i = 0; i < ilosc; ++i)
 	{
 		cout << tab[i] << endl;
 	}
 	return wynik;
-
-
-	/*for (int i = 1; i < ilosc; i++)
-	{
-		if (tab[i] > wynik)
-		{
-			wynik = tab[i];
-		}
-	}
-}
-else
-{
-	for (int i = 1; i < ilosc; i++)
-	{
-		if (tab[i] < wynik)
-		{
-			wynik = tab[i];
-		}
-	}
-}*/
 }
 
 int main()
