@@ -6,43 +6,24 @@ template <class T>
 T wez_min_max(T tab[], int ilosc, bool czy_rosnaco)
 {
 	T wynik, temp;
-	int maks, min;
-	if (czy_rosnaco)
+	int maks, min, extremum;
+
+
+	for (int i = 0; i < ilosc - 1; i++)
 	{
-		for (int i = 0; i < ilosc - 1; i++)
+		extremum = i;
+		for (int j = i + 1; j < ilosc; j++)
 		{
-			min = i;
-			for (int j = i + 1; j < ilosc; j++)
+			if (tab[j] < tab[extremum] && czy_rosnaco || tab[j] > tab[extremum] && !czy_rosnaco)
 			{
-				if (tab[j] < tab[min])
-				{
-					min = j;
-				}
+				extremum = j;
 			}
-			temp = tab[min];
-			tab[min] = tab[i];
-			tab[i] = temp;
 		}
-		wynik = tab[ilosc - 1];
+		temp = tab[extremum];
+		tab[extremum] = tab[i];
+		tab[i] = temp;
 	}
-	else
-	{
-		for (int i = 0; i < ilosc - 1; i++)
-		{
-			maks = i;
-			for (int j = i + 1; j < ilosc; j++)
-			{
-				if (tab[j] > tab[maks])
-				{
-					maks = j;
-				}
-			}
-			temp = tab[maks];
-			tab[maks] = tab[i];
-			tab[i] = temp;
-		}
-		wynik = tab[ilosc - 1];
-	}
+	wynik = tab[ilosc - 1];
 	return wynik;
 }
 
