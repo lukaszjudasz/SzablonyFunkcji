@@ -17,10 +17,11 @@ T wez_min_max(T tab[], int ilosc, bool czy_rosnaco)
 			{
 				if (tab[j] > tab[maks])
 				{
-					temp = tab[maks];
-					tab[maks] = tab[i];
-					tab[i] = maks;
+					maks = j;
 				}
+				temp = tab[maks];
+				tab[maks] = tab[i];
+				tab[i] = maks;
 			}
 		}
 	}
