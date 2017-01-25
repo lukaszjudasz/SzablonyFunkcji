@@ -24,6 +24,10 @@ T wez_min_max(T tab[], int ilosc, bool czy_rosnaco)
 			}
 		}
 	}
+	for (int i = 0; i < ilosc; ++i)
+	{
+		cout << tab[i] << endl;
+	}
 
 
 	/*for (int i = 1; i < ilosc; i++)
