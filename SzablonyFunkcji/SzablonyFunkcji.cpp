@@ -15,14 +15,14 @@ T wez_min_max(T tab[], int ilosc, bool czy_rosnaco)
 			maks = i;
 			for (int j = i + 1; j < ilosc; j++)
 			{
-				if (tab[j] > tab[maks])
+				if (tab[j] < tab[maks])
 				{
 					maks = j;
 				}
-				temp = tab[maks];
-				tab[maks] = tab[i];
-				tab[i] = maks;
 			}
+			temp = tab[maks];
+			tab[maks] = tab[i];
+			tab[i] = temp;
 		}
 	}
 	for (int i = 0; i < ilosc; ++i)
