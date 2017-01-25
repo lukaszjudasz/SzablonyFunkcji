@@ -5,75 +5,46 @@ using namespace std;
 template <class T>
 T wez_min_max(T tab[], int ilosc, bool czy_rosnaco)
 {
-	T wynik, temp;
-	T nowa;
+	T wynik, temp, maks;
+	T* nowa = new T[ilosc];
 	wynik = tab[0];
 	if (czy_rosnaco)
 	{
-		do
-		{
-			for (int i = 0; i < ilosc - 1; i++)
-			{
-				if (tab[i] > tab[i + 1])
-				{
-					temp = tab[i];
-					tab[i] = tab[i + 1];
-					tab[i + 1] = temp;
-					cout << tab[i];
-				}
-				else
-				{
-					cout << tab[i];
-				}
-			}
-			ilosc--;
-		}
-		while (ilosc > 1);
-		for (int i = 1; i < ilosc; i++)
-		{
-			if (tab[i] > wynik)
-			{
-				wynik = tab[i];
-			}
-		}
-	}
-	else
-	{
-		for (int i = 1; i < ilosc; i++)
-		{
-			if (tab[i] < wynik)
-			{
-				wynik = tab[i];
-			}
-		}
-	}
-	return wynik;
-}
-
-template <class T>
-void sort(int tab[])
-{
-	int temp;
-	int ilosc = 5;
-	do
-	{
 		for (int i = 0; i < ilosc - 1; i++)
 		{
-			if (tab[i] > tab[i + 1])
+			maks = i;
+			for (int j = i + 1; j < ilosc; j++)
 			{
-				temp = tab[i];
-				tab[i] = tab[i + 1];
-				tab[i + 1] = temp;
-				cout << tab[i];
-			}
-			else
-			{
-				cout << tab[i];
+				if (tab[j] > tab[maks])
+				{
+					temp = tab[maks];
+					tab[maks] = tab[i];
+					tab[i] = maks;
+				}
 			}
 		}
-		ilosc--;
 	}
-	while (ilosc > 1);
+
+
+	/*for (int i = 1; i < ilosc; i++)
+	{
+		if (tab[i] > wynik)
+		{
+			wynik = tab[i];
+		}
+	}
+}
+else
+{
+	for (int i = 1; i < ilosc; i++)
+	{
+		if (tab[i] < wynik)
+		{
+			wynik = tab[i];
+		}
+	}
+}*/
+	return wynik;
 }
 
 int main()
